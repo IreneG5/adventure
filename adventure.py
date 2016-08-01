@@ -21,5 +21,10 @@ while True:
             print 'to the %s is a %s' % (k, possible_location)
             valid_directions[k] = possible_position
 
-    direction = raw_input('which direction do you want to go?\n')
-    position = valid_directions[direction]
+    direction = ''
+    while direction not in valid_directions:
+            direction = raw_input('which direction do you want to go?\n')
+            if direction not in valid_directions:
+                print 'You can''t go in that direction'
+            else:
+                position = valid_directions[direction]
